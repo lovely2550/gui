@@ -1,19 +1,15 @@
-#!/usr/bin/env bash
-#
-# Copyright (c) The Bitcoin Core developers
-# Distributed under the MIT software license, see the accompanying
-# file COPYING or https://opensource.org/license/mit/.
+#!/bin/sh
+set -e  # เมื่อเกิดข้อผิดพลาดใดๆ จะหยุดการทำงานทันที
 
-export LC_ALL=C
+echo "เริ่มการรัน lint..."
 
-# Fixes permission issues when there is a container UID/GID mismatch with the owner
-# of the mounted bitcoin src dir.
-git config --global --add safe.directory /bitcoin
-
-export PATH="/python_build/bin:${PATH}"
-
-if [ -z "$1" ]; then
-  bash -ic "./ci/lint/06_script.sh"
+# ตรวจสอบว่ามี argument ถูกส่งเข้ามาไหม
+if [ "$#" -eq 0 ]; then
+  # ถ้าไม่มี argument ให้รัน eslint ตรวจสอบไฟล์ทั้งหมดในโฟลเดอร์ src
+  eslint src/
 else
-  exec "$@"
+  # ถ้ามี argument ให้รัน eslint กับ argument เหล่านั้น
+  eslint "$@"
 fi
+
+echo "การรัน lint เสร็จสิ้น"
