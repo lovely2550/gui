@@ -1,7 +1,8 @@
-[main]
-host = https://www.transifex.com
+[หลัก]
+โฮสต์ = https://www.transifex.com
 
-[o:bitcoin:p:bitcoin:r:qt-translation-029x]
-file_filter = src/qt/locale/bitcoin_<lang>.xlf
-source_file = src/qt/locale/bitcoin_en.xlf
-source_lang = en
+[lovely2550-gui]
+กรองไฟล์ = locale/<lang>/LC_MESSAGES/gui.po
+ไฟล์ต้นฉบับ = locale/en/LC_MESSAGES/gui.po
+ภาษาเริ่มต้น = en
+ชนิด = PO
