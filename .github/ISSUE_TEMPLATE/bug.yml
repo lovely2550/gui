@@ -1,93 +1,50 @@
-name: Bug report
-description: Submit a new bug report.
+name: 🐞 รายงานบั๊ก
+description: แจ้งปัญหาข้อผิดพลาดของระบบ
+title: "[บั๊ก]: "
 labels: [bug]
 body:
   - type: markdown
     attributes:
       value: |
-        ## This issue tracker is only for technical issues related to Bitcoin Core.
-
-        * General bitcoin questions and/or support requests should use Bitcoin StackExchange at https://bitcoin.stackexchange.com.
-        * For reporting security issues, please read instructions at https://bitcoincore.org/en/contact/.
-        * If the node is "stuck" during sync or giving "block checksum mismatch" errors, please ensure your hardware is stable by running `memtest` and observe CPU temperature with a load-test tool such as `linpack` before creating an issue.
-
-        ----
-  - type: checkboxes
+        👋 ขอบคุณที่สละเวลามารายงานบั๊ก!
+  - type: input
+    id: contact
     attributes:
-      label: Is there an existing issue for this?
-      description: Please search to see if an issue already exists for the bug you encountered.
-      options:
-      - label: I have searched the existing issues
-        required: true
-  - type: textarea
-    id: current-behaviour
-    attributes:
-      label: Current behaviour
-      description: Tell us what went wrong
-    validations:
-      required: true
-  - type: textarea
-    id: expected-behaviour
-    attributes:
-      label: Expected behaviour
-      description: Tell us what you expected to happen
-    validations:
-      required: true
-  - type: textarea
-    id: reproduction-steps
-    attributes:
-      label: Steps to reproduce
-      description: |
-        Tell us how to reproduce your bug. Please attach related screenshots if necessary.
-        * Run-time or compile-time configuration options
-        * Actions taken
-    validations:
-      required: true
-  - type: textarea
-    id: logs
-    attributes:
-      label: Relevant log output
-      description: |
-        Please copy and paste any relevant log output or attach a debug log file.
-
-        You can find the debug.log in your [data dir.](https://github.com/bitcoin/bitcoin/blob/master/doc/files.md#data-directory-location)
-
-        Please be aware that the debug log might contain personally identifying information.
+      label: ข้อมูลติดต่อ
+      description: หากเราต้องการข้อมูลเพิ่มเติม จะติดต่อคุณได้อย่างไร?
+      placeholder: your@email.com
     validations:
       required: false
-  - type: dropdown
+  - type: textarea
+    id: what-happened
     attributes:
-      label: How did you obtain Bitcoin Core
-      multiple: false
-      options:
-        - Compiled from source
-        - Pre-built binaries
-        - Package manager
-        - Other
-    validations:
-      required: true
-  - type: input
-    id: core-version
-    attributes:
-      label: What version of Bitcoin Core are you using?
-      description: Run `bitcoind --version` or in Bitcoin-QT use `Help > About Bitcoin Core`
-      placeholder: e.g. v24.0.1 or master@e1bf547
-    validations:
-      required: true
-  - type: input
-    id: os
-    attributes:
-      label: Operating system and version
-      placeholder: e.g. "MacOS Ventura 13.2" or "Ubuntu 22.04 LTS"
+      label: เกิดอะไรขึ้น?
+      description: กรุณาบอกเราด้วยว่าคุณคาดหวังให้เกิดอะไรขึ้นแทน
+      placeholder: บอกเราว่าคุณเห็นอะไร!
     validations:
       required: true
   - type: textarea
-    id: machine-specs
+    id: steps-to-reproduce
     attributes:
-      label: Machine specifications
+      label: ขั้นตอนการทำให้เกิดบั๊ก
       description: |
-        What are the specifications of the host machine?
-        e.g. OS/CPU and disk type, network connectivity
+        กรุณาอธิบายวิธีที่เราจะสามารถทำให้เกิดบั๊กนี้ได้ทีละขั้นตอน
+      placeholder: |
+        1. ไปที่ '...'
+        2. คลิกที่ '....'
+        3. เลื่อนลงไปที่ '....'
+        4. พบข้อผิดพลาด
+    validations:
+      required: true
+  - type: textarea
+    id: environment
+    attributes:
+      label: สภาพแวดล้อมของระบบ
+      description: |
+        กรุณาแจ้งข้อมูลระบบที่คุณใช้งาน (OS, เบราว์เซอร์, เวอร์ชัน ฯลฯ)
+      placeholder: |
+        - ระบบปฏิบัติการ: [เช่น Windows 11, macOS 13.5]
+        - เบราว์เซอร์: [เช่น Chrome 124, Safari, Firefox]
+        - เวอร์ชันของโปรแกรม: [เช่น v1.0.0]
     validations:
       required: false
-
