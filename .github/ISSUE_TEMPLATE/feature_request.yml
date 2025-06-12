@@ -1,36 +1,49 @@
-name: Feature Request
-description: Suggest an idea for this project.
-labels: [Feature]
+name: ขอฟีเจอร์ใหม่
+description: เสนอแนวคิดใหม่หรือการปรับปรุงฟีเจอร์ที่มีอยู่
+title: "[Feature]: "
+labels: ["feature request"]
 body:
-  - type: textarea
-    id: feature
+  - type: markdown
     attributes:
-      label: Please describe the feature you'd like to see added.
-      description: Attach screenshots or logs if applicable.
+      value: |
+        🙏 ขอบคุณที่ช่วยเสนอไอเดียในการพัฒนาโปรเจกต์ของเรา!
+  - type: input
+    id: contact
+    attributes:
+      label: ช่องทางติดต่อ
+      description: หากเราต้องการข้อมูลเพิ่มเติม จะสามารถติดต่อคุณได้อย่างไร?
+      placeholder: เช่น อีเมล หรือชื่อผู้ใช้ GitHub
+    validations:
+      required: false
+  - type: textarea
+    id: problem
+    attributes:
+      label: ปัญหาหรือสิ่งที่ต้องการปรับปรุง
+      description: แจ้งว่าเกิดปัญหาอะไร หรือสิ่งใดที่ต้องการให้ดียิ่งขึ้น
+      placeholder: บางครั้งฉันรู้สึกว่า...
     validations:
       required: true
   - type: textarea
-    id: related-problem
-    attributes:
-      label: Is your feature related to a problem, if so please describe it.
-      description: Attach screenshots or logs if applicable.
-    validations:
-      required: false
-  - type: textarea
     id: solution
     attributes:
-      label: Describe the solution you'd like
+      label: แนวทางที่คุณเสนอ
+      description: อธิบายว่าคุณอยากให้ระบบทำงานอย่างไรหรือปรับปรุงอะไร
+      placeholder: ฉันอยากให้มันสามารถ...
     validations:
-      required: false
+      required: true
   - type: textarea
     id: alternatives
     attributes:
-      label: Describe any alternatives you've considered
+      label: ทางเลือกอื่นที่คุณเคยลอง
+      description: คุณเคยพยายามทำอย่างไรกับปัญหานี้บ้าง?
+      placeholder: ฉันเคยลอง...
     validations:
       required: false
   - type: textarea
-    id: additional-context
+    id: context
     attributes:
-      label: Please leave any additional context
+      label: ข้อมูลเพิ่มเติม
+      description: มีอะไรเพิ่มเติมที่ควรรู้ไหม เช่น รูปภาพ ลิงก์ หรือคำอธิบายประกอบ
+      placeholder: เพิ่มเติมบริบทหรือรายละเอียดที่เกี่ยวข้อง
     validations:
       required: false
