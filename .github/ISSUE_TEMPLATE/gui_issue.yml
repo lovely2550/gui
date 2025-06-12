@@ -1,18 +1,59 @@
-name: Issue or feature request related to the GUI
-description: Any report, issue or feature request related to the GUI
-labels: [GUI]
+name: ปัญหา GUI
+description: แจ้งปัญหาหรือข้อผิดพลาดที่พบใน GUI
+title: "[ปัญหา GUI]"
+labels: bug
+assignees: ''
+
 body:
-- type: checkboxes
-  id: acknowledgement
-  attributes:
-    label: Issues, reports or feature requests related to the GUI should be opened directly on the GUI repo
-    description: https://github.com/bitcoin-core/gui/issues/
-    options:
-      - label: I still think this issue should be opened here
-        required: true
-- type: textarea
-  id: gui-request
-  attributes:
-    label: Report
-  validations:
-    required: true
+  - type: markdown
+    attributes:
+      value: |
+        ## กรุณาแจ้งปัญหาที่พบใน GUI พร้อมรายละเอียดให้ครบถ้วน
+
+  - type: input
+    id: environment
+    attributes:
+      label: สภาพแวดล้อม
+      description: กรุณาระบุระบบปฏิบัติการ, เวอร์ชัน GUI, และข้อมูลอื่น ๆ ที่เกี่ยวข้อง
+      placeholder: เช่น Windows 10, GUI เวอร์ชัน 1.2.3
+    validations:
+      required: true
+
+  - type: textarea
+    id: steps
+    attributes:
+      label: ขั้นตอนการทำให้เกิดปัญหา
+      description: กรุณาอธิบายขั้นตอนอย่างละเอียด เพื่อให้ทีมงานสามารถทำซ้ำปัญหาได้
+      placeholder: |
+        1. เปิดโปรแกรม
+        2. คลิกที่เมนู...
+        3. เกิดข้อผิดพลาด...
+    validations:
+      required: true
+
+  - type: textarea
+    id: expected_behavior
+    attributes:
+      label: ผลลัพธ์ที่คาดหวัง
+      description: กรุณาอธิบายผลลัพธ์ที่คุณคาดว่าจะเกิดขึ้น
+      placeholder: โปรแกรมควรจะแสดงผลตามที่ต้องการโดยไม่เกิดข้อผิดพลาด
+    validations:
+      required: true
+
+  - type: textarea
+    id: actual_behavior
+    attributes:
+      label: ผลลัพธ์ที่เกิดขึ้นจริง
+      description: กรุณาอธิบายสิ่งที่เกิดขึ้นจริงที่แตกต่างจากที่คาดหวัง
+      placeholder: โปรแกรมแครช หรือแสดงข้อความผิดพลาด
+    validations:
+      required: true
+
+  - type: textarea
+    id: additional_context
+    attributes:
+      label: ข้อมูลเพิ่มเติม
+      description: หากมีข้อมูลอื่น ๆ ที่เกี่ยวข้อง เช่น log หรือ screenshot กรุณาแนบไว้
+      placeholder: แนบ log หรือรูปภาพประกอบ
+    validations:
+      required: false
